@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     float speed = 0.005f;
     float offsetSpeed = 0;
     GameObject player;
-    Vector3 offset = new Vector3(3, 12, -5);
+    Vector3 offset = new Vector3(1, 14, -5);
 
 
     // Start is called before the first frame update

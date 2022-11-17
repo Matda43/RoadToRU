@@ -82,7 +82,7 @@ public class MapGenerator
                 }
             }
             indexPlateform = index;
-            nbPlateformToCreate = Random.Range(1, parts[indexPart].plateforms[indexPlateform].minOccurence + 1);
+            nbPlateformToCreate = Random.Range(parts[indexPart].plateforms[indexPlateform].minOccurence, parts[indexPart].plateforms[indexPlateform].maxOccurence + 1);
         }
     }
 
