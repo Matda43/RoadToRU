@@ -296,11 +296,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeMap: 40
   parts:
-  - width: 30
+  - width: 100
     plateforms:
     - prefab: {fileID: 5504176279077031272, guid: eac35116275b98341a22cc09cff1a7d3, type: 3}
       minOccurence: 5
-    - prefab: {fileID: 3737162086799215598, guid: a74ded0936fbe0d4d852bf1fbe592d31, type: 3}
+    - prefab: {fileID: 3692861041703673627, guid: 0b81ee98e83fab64ba3129c4206fbb60, type: 3}
       minOccurence: 2
   - width: 50
     plateforms:
