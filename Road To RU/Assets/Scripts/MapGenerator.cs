@@ -20,6 +20,12 @@ public class MapGenerator
 
     List<GameObject> plateforms;
 
+    const float MAX_TIME_LEFT = 3;
+
+    float timeLeft = MAX_TIME_LEFT;
+
+
+
     public MapGenerator(int sizeMap, Part[] parts, GameObject player)
     {
         this.sizeMap = sizeMap;
@@ -92,7 +98,13 @@ public class MapGenerator
         {
             chooseAPlateform();
             GameObject plateform = GameObject.Instantiate(parts[indexPart].plateforms[indexPlateform].prefab, currentPosition, Quaternion.identity);
+
+            createElementsInAPlatform(parts[indexPart].plateforms[indexPlateform]);
+         
             plateforms.Add(plateform);
+
+
+
             nbPlateformToCreate--;
             currentPosition.z += plateform.transform.localScale.z;
             
@@ -110,14 +122,41 @@ public class MapGenerator
         }
     }
 
-    void placeElements(int indexPart, int indexPrefab)
-    {
-
-    }
-
 
     public bool anotherPlateformShouldBeAdded(Vector3 positionCamera)
     {
         return (currentPosition.z - sizeMap < positionCamera.z - 5) && !end;
+    }
+
+
+
+    void createElementsInAPlatform(Plateform plateform)
+    {
+        if (plateform.movableElement.Length > 0)
+        {
+            GameObject child = GameObject.Instantiate(plateform.movableElement[Random.Range(0, plateform.movableElement.Length)], new Vector3(15, currentPosition.y, currentPosition.z), Quaternion.identity);
+            Movable movable = child.GetComponent<Movable>();
+            movable.setDirection(Vector3.left);
+        }
+    }
+
+    public void updateTime(float timePassed)
+    {
+        timeLeft -= timePassed;
+        if (timeLeft <= 0)
+        {
+            /*
+            foreach(GameObject go in plateforms)
+            {
+                if (go != null)
+                {
+                    Plateform p = go.GetComponent<Plateform>();
+                    createElementsInAPlatform(p);
+                }
+            }
+            */
+            timeLeft = Random.Range(MAX_TIME_LEFT - 1, MAX_TIME_LEFT);
+            
+        }
     }
 }

@@ -27,7 +27,8 @@ public class Main : MonoBehaviour
     {
         if (mapGenerator.anotherPlateformShouldBeAdded(camera.transform.position))
         {
-            mapGenerator.movePlateform();
+            mapGenerator.movePlateform();       
         }
+        mapGenerator.updateTime(Time.deltaTime);
     }
 }
