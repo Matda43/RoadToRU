@@ -296,20 +296,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeMap: 40
   parts:
-  - width: 100
+  - width: 30
     plateforms:
     - prefab: {fileID: 5504176279077031272, guid: eac35116275b98341a22cc09cff1a7d3, type: 3}
-      minOccurence: 5
+      minOccurence: 1
+      maxOccurence: 5
     - prefab: {fileID: 3692861041703673627, guid: 0b81ee98e83fab64ba3129c4206fbb60, type: 3}
       minOccurence: 2
+      maxOccurence: 3
   - width: 50
     plateforms:
     - prefab: {fileID: 4890259111254914039, guid: 1ed6240b525806f49b988aaecd27854e, type: 3}
       minOccurence: 1
+      maxOccurence: 1
     - prefab: {fileID: 3737162086799215598, guid: a74ded0936fbe0d4d852bf1fbe592d31, type: 3}
-      minOccurence: 1
-    - prefab: {fileID: 2808720819776264785, guid: d6750a3b7a5dd0e4b8ad891f06640712, type: 3}
       minOccurence: 2
+      maxOccurence: 3
+    - prefab: {fileID: 2808720819776264785, guid: d6750a3b7a5dd0e4b8ad891f06640712, type: 3}
+      minOccurence: 1
+      maxOccurence: 3
 --- !u!1 &709731645
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,8 +368,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
