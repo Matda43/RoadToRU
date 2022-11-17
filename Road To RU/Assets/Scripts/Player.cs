@@ -31,11 +31,11 @@ public class Player : MonoBehaviour
         {
             direction = Vector3.back;
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.Q))
+        }else if (Input.GetKeyDown(KeyCode.Q) && transform.position.x > -10)
         {
             direction = Vector3.left;
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.D))
+        }else if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 10)
         {
             direction = Vector3.right;
             move = true;

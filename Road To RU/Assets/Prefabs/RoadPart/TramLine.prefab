@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4890259111254914039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.482632, y: -9.0524435, z: 37.78355}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 40, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4890259111797888746}
@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 4890259111463497500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.015, z: -0.175}
-  m_LocalScale: {x: 30, y: 0.22, z: 0.1}
+  m_LocalScale: {x: 1, y: 0.22, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4890259111254914036}
@@ -161,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 4890259111797888749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.35}
-  m_LocalScale: {x: 30, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4890259111254914036}
@@ -258,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 4890259111822730420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.015, z: 0.175}
-  m_LocalScale: {x: 30, y: 0.22, z: 0.1}
+  m_LocalScale: {x: 1, y: 0.22, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4890259111254914036}
@@ -355,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 4890259112391553611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.35}
-  m_LocalScale: {x: 30, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4890259111254914036}
@@ -452,7 +452,7 @@ Transform:
   m_GameObject: {fileID: 4890259112914280978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4890259111254914036}
