@@ -20,17 +20,11 @@ public class MapGenerator
 
     List<GameObject> plateforms;
 
-    const float MAX_TIME_LEFT = 3;
-
-    float timeLeft = MAX_TIME_LEFT;
-
-
-
     public MapGenerator(int sizeMap, Part[] parts, GameObject player)
     {
         this.sizeMap = sizeMap;
         this.parts = parts;
-        this.currentPosition = getPosition(player) + new Vector3(0,0,3);
+        this.currentPosition = getPosition(player) + new Vector3(0,0,8);
         this.start = this.currentPosition;
         calculateRealWidth();
         initialisation();
@@ -60,18 +54,19 @@ public class MapGenerator
         }
     }
 
-    public void movePlateform()
+    public void movePlateform(Vector3 positionCamera)
     {
-        addPlateform();
-        destroyFirstPlateform();
+        if (anotherPlateformShouldBeAdded(positionCamera))
+        {
+            addPlateform();
+            destroyFirstPlateform();
+        }
     }
 
     void destroyFirstPlateform()
     {
-        if(plateforms != null && plateforms.Count > 0 && !end)
+        if(plateforms != null && plateforms.Count > 0)
         {
-            Container container = plateforms[0].GetComponent<Container>();
-            container.destroyChilds();
             GameObject.Destroy(plateforms[0]);
             plateforms.RemoveAt(0);
         }
@@ -90,7 +85,8 @@ public class MapGenerator
                 }
             }
             indexPlateform = index;
-            nbPlateformToCreate = Random.Range(parts[indexPart].plateforms[indexPlateform].minOccurence, parts[indexPart].plateforms[indexPlateform].maxOccurence + 1);
+            Plateform plateform = parts[indexPart].plateforms[indexPlateform].GetComponent<Plateform>();
+            nbPlateformToCreate = Random.Range(plateform.minOccurence, plateform.maxOccurence + 1);
         }
     }
 
@@ -99,12 +95,8 @@ public class MapGenerator
         if (!end)
         {
             chooseAPlateform();
-            GameObject plateform = GameObject.Instantiate(parts[indexPart].plateforms[indexPlateform].prefab, currentPosition, Quaternion.identity);
-            Container container = plateform.AddComponent<Container>();
-            container.setMovableElements(parts[indexPart].plateforms[indexPlateform].movableElements);
+            GameObject plateform = GameObject.Instantiate(parts[indexPart].plateforms[indexPlateform], currentPosition, Quaternion.identity);
             plateforms.Add(plateform);
-
-
 
             nbPlateformToCreate--;
             currentPosition.z += plateform.transform.localScale.z;
@@ -127,25 +119,5 @@ public class MapGenerator
     public bool anotherPlateformShouldBeAdded(Vector3 positionCamera)
     {
         return (currentPosition.z - sizeMap < positionCamera.z - 5) && !end;
-    }
-
-    public void updateTime(float timePassed)
-    {
-        timeLeft -= timePassed;
-        if (timeLeft <= 0)
-        {
-            
-            foreach(GameObject go in plateforms)
-            {
-                if (go != null)
-                {
-                    Container container = go.GetComponent<Container>();
-                    container.instanciate();
-                }
-            }
-            
-            timeLeft = Random.Range(MAX_TIME_LEFT - 1, MAX_TIME_LEFT);
-            
-        }
     }
 }

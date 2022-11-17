@@ -25,10 +25,6 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mapGenerator.anotherPlateformShouldBeAdded(camera.transform.position))
-        {
-            mapGenerator.movePlateform();       
-        }
-        mapGenerator.updateTime(Time.deltaTime);
+        mapGenerator.movePlateform(camera.transform.position);       
     }
 }

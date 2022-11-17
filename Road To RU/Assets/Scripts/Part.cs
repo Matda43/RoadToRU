@@ -7,7 +7,7 @@ using UnityEngine;
 public class Part
 {
     public int width;
-    [SerializeField] public Plateform[] plateforms;
+    public GameObject[] plateforms;
 
     public Part()
     {

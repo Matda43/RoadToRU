@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Element : MonoBehaviour
 {
-    public GameObject prefab;
-    public float scale;
-
     // Start is called before the first frame update
     void Start()
     {
