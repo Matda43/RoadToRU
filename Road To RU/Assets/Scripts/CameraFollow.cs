@@ -21,22 +21,26 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 playerPosition = player.transform.position;
-        Vector3 newPosition = transform.position + Vector3.forward * 5;
-        newPosition.y = playerPosition.y + offset.y;
-        
-        if(newPosition.z < playerPosition.z + 3)
+        if (player.GetComponent<Player>().gameStart)
         {
-            newPosition.z = playerPosition.z;
-            offsetSpeed = 0.005f;
-        }
-        else
-        {
-            offsetSpeed = 0;
-        }
+            Vector3 playerPosition = player.transform.position;
+            Vector3 newPosition = transform.position + Vector3.forward * 5;
+            newPosition.y = playerPosition.y + offset.y;
 
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, newPosition, speed + offsetSpeed);
-        this.transform.position = smoothPosition;
+            if (newPosition.z < playerPosition.z + 3)
+            {
+                newPosition.z = playerPosition.z;
+                offsetSpeed = 0.005f;
+            }
+            else
+            {
+                offsetSpeed = 0;
+            }
+
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, newPosition, speed + offsetSpeed);
+            this.transform.position = smoothPosition;
+        }
+        
     }
 
     public void incSpeed()

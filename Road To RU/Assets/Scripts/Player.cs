@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     Vector3 direction;
     bool move = false;
 
+    public bool gameStart = false;
     // Start is called before the first frame update
     void Avake()
     {
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z)) {
             direction = Vector3.forward;
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.S))
+        }else if (Input.GetKeyDown(KeyCode.S) && transform.position.z > -2)
         {
             direction = Vector3.back;
             move = true;
@@ -45,5 +46,8 @@ public class Player : MonoBehaviour
             this.transform.position += direction;
             move = false;
         }
+
+        if (this.transform.position.z == 2)
+            gameStart = true;
     }
 }

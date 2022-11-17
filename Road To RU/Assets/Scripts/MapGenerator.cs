@@ -24,7 +24,7 @@ public class MapGenerator
     {
         this.sizeMap = sizeMap;
         this.parts = parts;
-        this.currentPosition = getPosition(player);
+        this.currentPosition = getPosition(player) + new Vector3(0,0,3);
         this.start = this.currentPosition;
         calculateRealWidth();
         initialisation();
