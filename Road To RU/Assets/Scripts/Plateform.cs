@@ -9,7 +9,7 @@ public class Plateform
     public GameObject prefab;
     public int minOccurence;
     public int maxOccurence;
-    public GameObject[] movableElement;
+    public GameObject[] movableElements;
 
     public Plateform()
     {

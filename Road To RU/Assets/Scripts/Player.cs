@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
             move = false;
         }
 
-        if (this.transform.position.z == 2)
+        if (this.transform.position.z >= 2 && gameStart == false)
             gameStart = true;
     }
 }

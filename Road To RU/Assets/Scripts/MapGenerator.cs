@@ -70,6 +70,8 @@ public class MapGenerator
     {
         if(plateforms != null && plateforms.Count > 0 && !end)
         {
+            Container container = plateforms[0].GetComponent<Container>();
+            container.destroyChilds();
             GameObject.Destroy(plateforms[0]);
             plateforms.RemoveAt(0);
         }
@@ -98,9 +100,8 @@ public class MapGenerator
         {
             chooseAPlateform();
             GameObject plateform = GameObject.Instantiate(parts[indexPart].plateforms[indexPlateform].prefab, currentPosition, Quaternion.identity);
-
-            createElementsInAPlatform(parts[indexPart].plateforms[indexPlateform]);
-         
+            Container container = plateform.AddComponent<Container>();
+            container.setMovableElements(parts[indexPart].plateforms[indexPlateform].movableElements);
             plateforms.Add(plateform);
 
 
@@ -128,33 +129,21 @@ public class MapGenerator
         return (currentPosition.z - sizeMap < positionCamera.z - 5) && !end;
     }
 
-
-
-    void createElementsInAPlatform(Plateform plateform)
-    {
-        if (plateform.movableElement.Length > 0)
-        {
-            GameObject child = GameObject.Instantiate(plateform.movableElement[Random.Range(0, plateform.movableElement.Length)], new Vector3(15, currentPosition.y, currentPosition.z), Quaternion.identity);
-            Movable movable = child.GetComponent<Movable>();
-            movable.setDirection(Vector3.left);
-        }
-    }
-
     public void updateTime(float timePassed)
     {
         timeLeft -= timePassed;
         if (timeLeft <= 0)
         {
-            /*
+            
             foreach(GameObject go in plateforms)
             {
                 if (go != null)
                 {
-                    Plateform p = go.GetComponent<Plateform>();
-                    createElementsInAPlatform(p);
+                    Container container = go.GetComponent<Container>();
+                    container.instanciate();
                 }
             }
-            */
+            
             timeLeft = Random.Range(MAX_TIME_LEFT - 1, MAX_TIME_LEFT);
             
         }
