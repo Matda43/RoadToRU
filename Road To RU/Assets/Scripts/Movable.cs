@@ -45,7 +45,7 @@ public class Movable : Element
     {
         direction = new_direction;
         scale = new_scale;
-        Vector3 new_position = new Vector3(position.x + (scale.x/2 + GetComponent<Collider>().bounds.size.x/2) * -direction.x, position.y + scale.y / 2 + this.transform.localScale.y / 2, position.z);
+        Vector3 new_position = new Vector3(position.x + (scale.x/2 + GetComponent<Collider>().bounds.size.x/2) * -direction.x, position.y, position.z);
         this.transform.position = new_position;
         instanciate = true;
     }

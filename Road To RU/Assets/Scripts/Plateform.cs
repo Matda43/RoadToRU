@@ -74,15 +74,17 @@ public class Plateform : MonoBehaviour
         if (length > 0)
         {
             int random = Random.Range(0, length);
-            GameObject go = Instantiate(movableElements[random], this.transform.position + Vector3.down, Quaternion.identity);
+            GameObject go = Instantiate(movableElements[random], this.transform.position + Vector3.up * 0.5f, Quaternion.identity);
             go.transform.parent = this.transform;
+
             Movable movable = go.GetComponent<Movable>();
             switch (direction) {
                 case Direction.Left:
-                    movable.setDirection(Vector3.left, transform.position, transform.localScale);
+                    go.transform.Rotate(new Vector3(0,180,0));
+                    movable.setDirection(Vector3.left, go.transform.position, transform.localScale);
                     break;
                 case Direction.Right:
-                    movable.setDirection(Vector3.right, transform.position, transform.localScale);
+                    movable.setDirection(Vector3.right, go.transform.position, transform.localScale);
                     break;
                 default:
                     break;

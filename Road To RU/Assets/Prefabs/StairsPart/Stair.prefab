@@ -114,5 +114,4 @@ MonoBehaviour:
   maxOccurence: 3
   MAX_TIME_LEFT: 5
   direction: 0
-  movableElements:
-  - {fileID: 2126556173520004409, guid: e13482079c26cc845b3209fde767eb5f, type: 3}
+  movableElements: []

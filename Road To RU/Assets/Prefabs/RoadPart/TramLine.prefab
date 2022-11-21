@@ -54,7 +54,7 @@ MonoBehaviour:
   MAX_TIME_LEFT: 5
   direction: 2
   movableElements:
-  - {fileID: 8559987999062478109, guid: 1c5622eae5b92c348ab9418532265949, type: 3}
+  - {fileID: 1799533878302655427, guid: 8e3d55492b816744eb4846be7077604e, type: 3}
 --- !u!1 &4890259111463497500
 GameObject:
   m_ObjectHideFlags: 0
