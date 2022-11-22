@@ -115,6 +115,8 @@ MonoBehaviour:
   MAX_TIME_LEFT: 5
   direction: 2
   movableElements:
+  - {fileID: 3313388425985167299, guid: a9ee35d2937950a40a3ea653248023e6, type: 3}
   - {fileID: 6457596543114734817, guid: a13187eb5ca17d44280adfdad8487a24, type: 3}
   - {fileID: 7219430504682216877, guid: a80727c7acca3704fa19196f5a4e9a98, type: 3}
   - {fileID: 2637652109157742055, guid: 26b1e8d529cbdca448bf37eda4e3db76, type: 3}
+  - {fileID: 183535857361034202, guid: 69b7398118c4d2a409984f1bbf4afbbd, type: 3}

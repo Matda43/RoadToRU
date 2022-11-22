@@ -15,6 +15,9 @@ public class Plateform : MonoBehaviour
     public Direction direction;
 
     public GameObject[] movableElements;
+    public GameObject[] staticElements;
+
+    List<int> plateformPosition = new List<int>();
 
     List<GameObject> movables;
 
@@ -36,6 +39,9 @@ public class Plateform : MonoBehaviour
         }
 
         movables = new List<GameObject>();
+        FillList();
+        initStaticObject();
+
         timeLeft = Random.Range(MAX_TIME_LEFT - 3, MAX_TIME_LEFT);
     }
 
@@ -68,6 +74,22 @@ public class Plateform : MonoBehaviour
         }
     }
 
+    void initStaticObject()
+    {
+        int length = staticElements.Length;
+        if (length > 0)
+        {
+            int nbStaticObject = Random.Range(1, 12);
+            for(int i = 0; i < nbStaticObject; i++)
+            {
+                int randomObject = Random.Range(0, length);
+                Vector3 randomPosition = new Vector3(GetNonRepeatRandom(), 0, 0);
+                GameObject go = Instantiate(staticElements[randomObject], this.transform.position + Vector3.up * 0.5f + randomPosition, Quaternion.identity);
+                go.transform.parent = this.transform;
+            }
+        }
+    }
+
     void instanciate()
     {
         int length = movableElements.Length;
@@ -91,5 +113,25 @@ public class Plateform : MonoBehaviour
             }
             movables.Add(go);
         }
+    }
+
+    void FillList()
+    {
+        for (int i = -15; i < 16; i++)
+        {
+            plateformPosition.Add(i);
+        }
+    }
+
+    int GetNonRepeatRandom()
+    {
+        if (plateformPosition.Count == 0)
+        {
+            return -1; // Maybe you want to refill
+        }
+        int rand = Random.Range(0, plateformPosition.Count);
+        int value = plateformPosition[rand];
+        plateformPosition.RemoveAt(rand);
+        return value;
     }
 }

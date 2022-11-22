@@ -115,3 +115,6 @@ MonoBehaviour:
   MAX_TIME_LEFT: 5
   direction: 0
   movableElements: []
+  staticElements:
+  - {fileID: 3966637812002898114, guid: c534fe9df0b563d40877d987998f220a, type: 3}
+  - {fileID: 408524893432212477, guid: b141da3f2ea93ec489fde178b51548eb, type: 3}

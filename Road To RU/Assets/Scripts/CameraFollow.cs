@@ -21,7 +21,13 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player.GetComponent<Player>().gameStart)
+        if (player.GetComponent<Player>().debugModeCamera)
+        {
+            Vector3 playerPosition = player.transform.position + offset;
+
+            this.transform.position = playerPosition;
+        }
+        else if (player.GetComponent<Player>().gameStart)
         {
             Vector3 playerPosition = player.transform.position;
             Vector3 newPosition = transform.position + Vector3.forward * 5;

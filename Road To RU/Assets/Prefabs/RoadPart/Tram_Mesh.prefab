@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 8197659386691938130}
   m_Layer: 0
   m_Name: Tram_Mesh
-  m_TagString: Untagged
+  m_TagString: Moveable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
