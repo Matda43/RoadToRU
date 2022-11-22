@@ -67,13 +67,13 @@ public class Player : MonoBehaviour
             PartiePerdu();
         if (other.CompareTag("Static"))
         {
-            if (transform.position.z < other.transform.position.z)
+            if (transform.position.z < other.transform.position.z - 0.5f)
                 blockForward = true;
-            if (transform.position.z > other.transform.position.z)
+            if (transform.position.z > other.transform.position.z + 0.5f)
                 blockBack = true;    
-            if (transform.position.x < other.transform.position.x)
+            if (transform.position.x < other.transform.position.x - 0.5f)
                 blockRight = true;
-            if (transform.position.x > other.transform.position.x)
+            if (transform.position.x > other.transform.position.x + 0.5f)
                 blockLeft = true;  
         }
     }

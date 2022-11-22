@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStart: 0
-  debugModeCamera: 1
+  debugModeCamera: 0
 --- !u!1 &2429995258769370354
 GameObject:
   m_ObjectHideFlags: 0
