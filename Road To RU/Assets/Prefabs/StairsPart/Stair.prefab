@@ -116,5 +116,7 @@ MonoBehaviour:
   direction: 0
   movableElements: []
   staticElements:
-  - {fileID: 3966637812002898114, guid: c534fe9df0b563d40877d987998f220a, type: 3}
-  - {fileID: 408524893432212477, guid: b141da3f2ea93ec489fde178b51548eb, type: 3}
+  - {fileID: 5248680888093995951, guid: d7e3f06e2aa20be4082506b2f4536dd0, type: 3}
+  - {fileID: 328733546743424223, guid: 326312ff93ffa0740b1a0da1c8d671ae, type: 3}
+  - {fileID: 8514614643920930132, guid: b5ca9524f481ed442897ec2f93952903, type: 3}
+  - {fileID: 7462413846865390306, guid: d210ca07909e6de4eb3ffce1af95ef4f, type: 3}

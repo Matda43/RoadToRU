@@ -83,8 +83,9 @@ public class Plateform : MonoBehaviour
             for(int i = 0; i < nbStaticObject; i++)
             {
                 int randomObject = Random.Range(0, length);
-                Vector3 randomPosition = new Vector3(GetNonRepeatRandom(), 0, 0);
-                GameObject go = Instantiate(staticElements[randomObject], this.transform.position + Vector3.up * 0.5f + randomPosition, Quaternion.identity);
+                Vector3 positionObject = new Vector3(GetNonRepeatRandom(), 0.25f, 0) + transform.position;
+                GameObject go = Instantiate(staticElements[randomObject], positionObject, Quaternion.identity);
+                go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y + staticElements[randomObject].transform.position.y, go.transform.position.z);
                 go.transform.parent = this.transform;
             }
         }
@@ -117,7 +118,8 @@ public class Plateform : MonoBehaviour
 
     void FillList()
     {
-        for (int i = -15; i < 16; i++)
+        int sizePlatform = (int)transform.localScale.x;
+        for (int i = (-sizePlatform/2)+1; i < sizePlatform/2; i++)
         {
             plateformPosition.Add(i);
         }

@@ -60,34 +60,18 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("J'ai trigger un truc !");
-        if(other.CompareTag("Moveable"))
-            Debug.Log("AIE");
+        if (other.CompareTag("Moveable"))
+            PartiePerdu();
         if (other.CompareTag("Static"))
         {
-            Debug.Log("Entree d'object");
             if (transform.position.z < other.transform.position.z)
-            {
                 blockForward = true;
-                Debug.Log("Bloqué devant");
-            } 
             if (transform.position.z > other.transform.position.z)
-            {
-                blockBack = true;
-                Debug.Log("Bloqué derriere");
-            }
-             
+                blockBack = true;    
             if (transform.position.x < other.transform.position.x)
-            {
                 blockRight = true;
-                Debug.Log("Bloqué a droite");
-            }
-            
             if (transform.position.x > other.transform.position.x)
-            {
-                blockLeft = true;
-                Debug.Log("Bloqué a gauche");
-            }
-               
+                blockLeft = true;  
         }
     }
 
@@ -95,27 +79,19 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Static"))
         {
-            Debug.Log("Sortie d'objet");
             if (transform.position.z < other.transform.position.z)
-            {
                 blockForward = false;
-                Debug.Log("Plus bloqué devant");
-            }
             if (transform.position.z > other.transform.position.z)
-            {
                 blockBack = false;
-                Debug.Log("Plus bloqué derriere");
-            }
             if (transform.position.x < other.transform.position.x)
-            {
                 blockRight = false;
-                Debug.Log("Plus bloqué a droite");
-            }
             if (transform.position.x > other.transform.position.x)
-            {
                 blockLeft = false;
-                Debug.Log("Plus bloqué a gauche");
-            }
         }
+    }
+
+    void PartiePerdu()
+    {
+        Debug.Log("Aie !");
     }
 }
