@@ -33,18 +33,22 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) && !blockForward) {
             direction = Vector3.forward;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             move = true;
         }else if (Input.GetKeyDown(KeyCode.S) && transform.position.z > -2 && !blockBack)
         {
             direction = Vector3.back;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             move = true;
         }else if (Input.GetKeyDown(KeyCode.Q) && transform.position.x > -10 && !blockLeft)
         {
             direction = Vector3.left;
+            transform.rotation = Quaternion.Euler(0, 270, 0);
             move = true;
         }else if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 10 && !blockRight)
         {
             direction = Vector3.right;
+            transform.rotation = Quaternion.Euler(0, 90, 0);
             move = true;
         }
         if (move)
@@ -59,7 +63,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("J'ai trigger un truc !");
         if (other.CompareTag("Moveable"))
             PartiePerdu();
         if (other.CompareTag("Static"))
@@ -93,5 +96,10 @@ public class Player : MonoBehaviour
     void PartiePerdu()
     {
         Debug.Log("Aie !");
+    }
+
+    void PartieGagne()
+    {
+        Debug.Log("U win !");
     }
 }
