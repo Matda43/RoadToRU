@@ -93,6 +93,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    void changeAvatar()
+    {
+
+    }
     void PartiePerdu()
     {
         Debug.Log("Aie !");
