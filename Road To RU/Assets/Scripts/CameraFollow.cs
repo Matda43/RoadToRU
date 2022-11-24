@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    float speed = 0.005f;
+    float speed = 0.008f;
     float offsetSpeed = 0;
     GameObject player;
     Vector3 offset = new Vector3(1, 14, -5);
@@ -30,13 +30,13 @@ public class CameraFollow : MonoBehaviour
         else if (player.GetComponent<Player>().gameStart)
         {
             Vector3 playerPosition = player.transform.position;
-            Vector3 newPosition = transform.position + Vector3.forward * 5;
+            Vector3 newPosition = transform.position + Vector3.forward * 7;
             newPosition.y = playerPosition.y + offset.y;
 
             if (newPosition.z < playerPosition.z + 3)
             {
                 newPosition.z = playerPosition.z;
-                offsetSpeed = 0.005f;
+                offsetSpeed = 0.008f;
             }
             else
             {
