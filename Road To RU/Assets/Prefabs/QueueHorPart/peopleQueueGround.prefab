@@ -115,3 +115,13 @@ MonoBehaviour:
   MAX_TIME_LEFT: 5
   direction: 2
   movableElements: []
+  staticElements:
+  - {fileID: 9035125999440337630, guid: c3637f47b286bfb4093a1a4b587c1a43, type: 3}
+  - {fileID: 8196149304654771201, guid: 61faf95938d27694e8bc06d4042cf8a7, type: 3}
+  - {fileID: 7897405444192755419, guid: e0af7965a03c46646902a5e963e14bf6, type: 3}
+  - {fileID: 5775587934786613902, guid: 9000cdb43a4c4cb46aa59e2a3f3a8703, type: 3}
+  - {fileID: 4540420049359351382, guid: 615139fcbb7db8a4db742690c2721dbb, type: 3}
+  - {fileID: 4726632904284788430, guid: 6643c337838ad8d408ff92f7773a2709, type: 3}
+  - {fileID: 3574123668663073034, guid: 52547ec2ba41a8a47abd907068ff76f8, type: 3}
+  minObject: 0
+  maxObjet: 0

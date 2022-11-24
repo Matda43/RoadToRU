@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     bool blockLeft = false;
     bool blockRight = false;
 
+    bool isDead = false;
+
     public bool gameStart = false;
     public bool debugModeCamera = true;
     // Start is called before the first frame update
@@ -31,21 +33,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !blockForward) {
+        if (Input.GetKeyDown(KeyCode.Z) && !blockForward && !isDead) {
             direction = Vector3.forward;
             transform.rotation = Quaternion.Euler(0, 0, 0);
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.S) && transform.position.z > -2 && !blockBack)
+        }else if (Input.GetKeyDown(KeyCode.S) && transform.position.z > -2 && !blockBack && !isDead)
         {
             direction = Vector3.back;
             transform.rotation = Quaternion.Euler(0, 180, 0);
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.Q) && transform.position.x > -10 && !blockLeft)
+        }else if (Input.GetKeyDown(KeyCode.Q) && transform.position.x > -10 && !blockLeft && !isDead)
         {
             direction = Vector3.left;
             transform.rotation = Quaternion.Euler(0, 270, 0);
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 10 && !blockRight)
+        }else if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 10 && !blockRight && !isDead)
         {
             direction = Vector3.right;
             transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -107,6 +109,8 @@ public class Player : MonoBehaviour
 
     void PartiePerdu()
     {
+        isDead = true;
+        transform.localScale = new Vector3(1, 0.1f, 1);
         Debug.Log("Aie !");
     }
 
