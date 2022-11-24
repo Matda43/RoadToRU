@@ -100,8 +100,6 @@ public class Plateform : MonoBehaviour
         {
             int random = Random.Range(0, length);
             GameObject go = Instantiate(movableElements[random], this.transform.position + Vector3.up * 0.5f, Quaternion.identity);
-            Debug.Log(movableElements[random].transform.rotation.y);
-            go.transform.Rotate(Vector3.up, movableElements[random].transform.rotation.y, Space.Self);
             go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y + movableElements[random].transform.position.y, go.transform.position.z);
             go.transform.parent = this.transform;
 

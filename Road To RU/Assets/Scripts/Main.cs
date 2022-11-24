@@ -32,5 +32,10 @@ public class Main : MonoBehaviour
         int roadMapSize = 7 + parts[2].width;
         if (player.transform.position.z >= roadMapSize && !player.getPlateActive())
             player.activePlate();
+
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
+        if (!GeometryUtility.TestPlanesAABB(planes, player.GetComponent<BoxCollider>().bounds))
+            Debug.Log("EH TA DISPARU !");
     }
+
 }

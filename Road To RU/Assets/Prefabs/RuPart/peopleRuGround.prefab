@@ -110,13 +110,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b06f113161decf479eb060a6aec618d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOccurence: 3
+  minOccurence: 2
   maxOccurence: 5
-  MAX_TIME_LEFT: 3
+  MAX_TIME_LEFT: 4
   direction: 2
   movableElements:
-  - {fileID: 8306035763615783699, guid: 0ac8ef0e84e549343b39242ade1c9ba7, type: 3}
-  - {fileID: 2558572240216311939, guid: 20908413013d89d49bbaf3e00c931a12, type: 3}
+  - {fileID: 3882154317867673267, guid: 78ab982b816b04844bedb4905eea0fc6, type: 3}
+  - {fileID: 7058200950191567049, guid: 18fa1e875e143a147a329642146cf11e, type: 3}
+  - {fileID: 8282495150607362773, guid: 489c2028b3082f04f81c55b5fab3b2f5, type: 3}
+  - {fileID: 8674794136819519972, guid: f7c7898ed974596409c8e9c2908acde3, type: 3}
+  - {fileID: 8987334755010907889, guid: 531c718874385a243877d1ae44ca9a9e, type: 3}
+  - {fileID: 8849382316403649030, guid: 7bbeaaee82fc33e4c98d769e11b5d643, type: 3}
+  - {fileID: 1433406543279080696, guid: 859fc029f4079e04f8266af12cc45512, type: 3}
+  - {fileID: 7747623863603600380, guid: 51e2a5caef7290449bf2b08ee8b01749, type: 3}
+  - {fileID: 7746087435345720038, guid: a166b66de11ed44478d73efb3a45c224, type: 3}
+  - {fileID: 1141074146396466982, guid: 01695ddaa39c7804baef297c7a66ef9f, type: 3}
+  - {fileID: 6679525336562078022, guid: 4a49fc2c8eba2c8409faf153bea3aa50, type: 3}
+  - {fileID: 8061232145653944724, guid: 6575d4ccc62309d4c89ecc4b2b11a657, type: 3}
+  - {fileID: 37630097679782447, guid: 3fdd7845c11c3fe4593572617cfe2333, type: 3}
+  - {fileID: 4975795252923732943, guid: 09740ebba9a59ae4fb16fd8d6e81c048, type: 3}
   staticElements: []
   minObject: 0
   maxObjet: 0

@@ -53,4 +53,5 @@ public class CameraFollow : MonoBehaviour
     {
         speed += 0.001f;
     }
+
 }
