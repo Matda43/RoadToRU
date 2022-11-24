@@ -110,8 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b06f113161decf479eb060a6aec618d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOccurence: 1
-  maxOccurence: 3
-  MAX_TIME_LEFT: 5
+  minOccurence: 3
+  maxOccurence: 5
+  MAX_TIME_LEFT: 3
   direction: 2
-  movableElements: []
+  movableElements:
+  - {fileID: 8306035763615783699, guid: 0ac8ef0e84e549343b39242ade1c9ba7, type: 3}
+  - {fileID: 2558572240216311939, guid: 20908413013d89d49bbaf3e00c931a12, type: 3}
+  staticElements: []
+  minObject: 0
+  maxObjet: 0

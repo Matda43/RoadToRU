@@ -96,6 +96,8 @@ public class Player : MonoBehaviour
     public void activePlate()
     {
         transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetComponent<BoxCollider>().center = new Vector3(0, 0, 0.15f);
+        transform.GetComponent<BoxCollider>().size = new Vector3(0.9f, 0.9f, 1.1f);
     }
 
     public bool getPlateActive()
