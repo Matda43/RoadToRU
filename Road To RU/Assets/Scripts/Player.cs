@@ -93,10 +93,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    void changeAvatar()
+    public void activePlate()
     {
-
+        transform.GetChild(0).gameObject.SetActive(true);
     }
+
+    public bool getPlateActive()
+    {
+        return transform.GetChild(0).gameObject.activeSelf;
+    }
+
     void PartiePerdu()
     {
         Debug.Log("Aie !");

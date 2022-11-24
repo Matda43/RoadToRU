@@ -120,4 +120,5 @@ MonoBehaviour:
   - {fileID: 8588296054539722976, guid: 3f9914d89e5f8264bab3fe89c80caeb5, type: 3}
   - {fileID: 4953724900236585368, guid: 7ab8a4cf629bb804486f5f90a7971bb9, type: 3}
   - {fileID: 6694627508793648357, guid: 21d8c48e7af352249b17ca6770bc0daa, type: 3}
+  minObject: 1
   maxObjet: 12

@@ -8,7 +8,8 @@ public class Main : MonoBehaviour
 
     [SerializeField] public Part[] parts;
 
-    GameObject player;
+    GameObject goPlayer;
+    Player player;
     new Camera camera;
 
     MapGenerator mapGenerator;
@@ -16,15 +17,20 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        goPlayer = GameObject.Find("Player");
+        player = goPlayer.GetComponent<Player>();
         camera = Camera.main;
 
-        mapGenerator = new MapGenerator(sizeMap, parts, player);
+        mapGenerator = new MapGenerator(sizeMap, parts, goPlayer);
     }
 
     // Update is called once per frame
     void Update()
     {
-        mapGenerator.movePlateform(camera.transform.position);       
+        mapGenerator.movePlateform(camera.transform.position);
+
+        int roadMapSize = 7 + parts[2].width;
+        if (player.transform.position.z >= roadMapSize && !player.getPlateActive())
+            player.activePlate();
     }
 }

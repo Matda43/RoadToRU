@@ -16,6 +16,7 @@ public class Plateform : MonoBehaviour
 
     public GameObject[] movableElements;
     public GameObject[] staticElements;
+    public int minObject;
     public int maxObjet;
 
     List<int> plateformPosition = new List<int>();
@@ -80,7 +81,7 @@ public class Plateform : MonoBehaviour
         int length = staticElements.Length;
         if (length > 0)
         {
-            int nbStaticObject = Random.Range(1, maxObjet);
+            int nbStaticObject = Random.Range(minObject, maxObjet);
             for(int i = 0; i < nbStaticObject; i++)
             {
                 int randomObject = Random.Range(0, length);
