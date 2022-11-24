@@ -30,8 +30,8 @@ public class Main : MonoBehaviour
         mapGenerator.movePlateform(camera.transform.position);
 
         int roadMapSize = 7 + parts[2].width;
-        if (player.transform.position.z >= roadMapSize && !player.getPlateActive())
-            player.activePlate();
+        if (goPlayer.transform.position.z >= roadMapSize && !player.getPlateActive())
+            goPlayer.transform.GetChild(0).gameObject.SetActive(true);
 
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
         if (!GeometryUtility.TestPlanesAABB(planes, player.GetComponent<BoxCollider>().bounds))

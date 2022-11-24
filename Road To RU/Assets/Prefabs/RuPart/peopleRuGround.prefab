@@ -130,5 +130,5 @@ MonoBehaviour:
   - {fileID: 37630097679782447, guid: 3fdd7845c11c3fe4593572617cfe2333, type: 3}
   - {fileID: 4975795252923732943, guid: 09740ebba9a59ae4fb16fd8d6e81c048, type: 3}
   staticElements: []
-  minObject: 0
+  minObject: 1
   maxObjet: 0

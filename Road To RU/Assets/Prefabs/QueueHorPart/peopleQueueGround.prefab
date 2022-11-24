@@ -123,5 +123,5 @@ MonoBehaviour:
   - {fileID: 4540420049359351382, guid: 615139fcbb7db8a4db742690c2721dbb, type: 3}
   - {fileID: 4726632904284788430, guid: 6643c337838ad8d408ff92f7773a2709, type: 3}
   - {fileID: 3574123668663073034, guid: 52547ec2ba41a8a47abd907068ff76f8, type: 3}
-  minObject: 0
-  maxObjet: 0
+  minObject: 2
+  maxObjet: 15
