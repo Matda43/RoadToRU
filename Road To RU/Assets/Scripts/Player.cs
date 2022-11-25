@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +34,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Remove the 2 first if
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("World");
+        }
         if (Input.GetKeyDown(KeyCode.Z) && !blockForward && !isDead) {
             direction = Vector3.forward;
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -78,6 +84,8 @@ public class Player : MonoBehaviour
             if (transform.position.x > other.transform.position.x + 0.5f)
                 blockLeft = true;  
         }
+        if (other.CompareTag("Arrivee"))
+            PartieGagne();
     }
 
     private void OnTriggerExit(Collider other)
@@ -109,6 +117,10 @@ public class Player : MonoBehaviour
 
     void PartieGagne()
     {
+        
+        gameStart = false;
         Debug.Log("U win !");
+        //Si appuie sur bouton mais en attendant : 
+        SceneManager.LoadScene("World");
     }
 }

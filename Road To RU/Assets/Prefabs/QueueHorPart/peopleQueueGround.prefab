@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minOccurence: 1
-  maxOccurence: 2
+  maxOccurence: 5
   MAX_TIME_LEFT: 5
   direction: 2
   movableElements: []
