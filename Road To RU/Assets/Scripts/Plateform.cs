@@ -81,7 +81,7 @@ public class Plateform : MonoBehaviour
         int length = staticElements.Length;
         if (length > 0)
         {
-            int nbStaticObject = Random.Range(minObject, maxObjet);
+            int nbStaticObject = Random.Range(minObject, maxObjet+1);
             for(int i = 0; i < nbStaticObject; i++)
             {
                 int randomObject = Random.Range(0, length);

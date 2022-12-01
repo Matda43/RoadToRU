@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Moveable
   - Static
+  - Arrivee
   layers:
   - Default
   - TransparentFX
