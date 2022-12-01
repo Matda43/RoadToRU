@@ -170,23 +170,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeMap: 40
   parts:
-  - width: 5
+  - width: 20
     plateforms:
     - {fileID: 5504176279077031272, guid: eac35116275b98341a22cc09cff1a7d3, type: 3}
     - {fileID: 3692861041703673627, guid: 0b81ee98e83fab64ba3129c4206fbb60, type: 3}
-  - width: 5
+  - width: 50
     plateforms:
     - {fileID: 2808720819776264785, guid: d6750a3b7a5dd0e4b8ad891f06640712, type: 3}
     - {fileID: 3737162086799215598, guid: a74ded0936fbe0d4d852bf1fbe592d31, type: 3}
     - {fileID: 4890259111254914039, guid: 1ed6240b525806f49b988aaecd27854e, type: 3}
-  - width: 5
+  - width: 20
     plateforms:
     - {fileID: 5128199406500487252, guid: 88b55166c47332d4ba9b8fe686c71e69, type: 3}
-  - width: 5
+  - width: 20
     plateforms:
     - {fileID: 5486982792630050225, guid: 4e31e53cc590c4841badb73686004776, type: 3}
     - {fileID: 2782925435903198391, guid: 6eb6378e34a3b194b90c5e22709582cb, type: 3}
-  - width: 5
+  - width: 30
     plateforms:
     - {fileID: 3544397716158417978, guid: d680e9f3eefb6964cae34f84e80a3656, type: 3}
     - {fileID: 2722548529707685338, guid: a62b1d99ac82f7a49ba6ec463aac1144, type: 3}
