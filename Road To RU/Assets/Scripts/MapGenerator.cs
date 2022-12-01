@@ -106,6 +106,8 @@ public class MapGenerator
                 indexPart++;
                 nbPlateformToCreate = 0;
                 end = indexPart == parts.Length;
+
+                Debug.Log("C'est la fin !");
             }
 
             if (indexPart == 0 && indexPlateform == 0)
