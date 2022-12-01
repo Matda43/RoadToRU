@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
             move = false;
         }
 
-        if (this.transform.position.z >= 2 && gameStart == false)
+        if (this.transform.position.z >= 2 && this.transform.position.z < 5 && gameStart == false)
             gameStart = true;
     }
 
@@ -112,7 +112,8 @@ public class Player : MonoBehaviour
     {
         isDead = true;
         transform.localScale = new Vector3(1, 0.1f, 1);
-        Debug.Log("Aie !");
+        //debugModeCamera = true;
+        gameStart = false;
     }
 
     void PartieGagne()
