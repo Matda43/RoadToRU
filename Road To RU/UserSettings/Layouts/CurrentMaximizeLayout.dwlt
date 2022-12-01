@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 13807
+  controlID: 31799
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 13808
+  controlID: 31800
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 13809
+  controlID: 31801
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,8 +225,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: d49f0000
+      m_LastClickedID: 40916
       m_ExpandedIDs: c09bf0ff769bf2ff7458f3ff3804f7ffd20bfcff0afbffffd49f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -535,9 +535,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.3545785, y: -2.6592958, z: 21.137472}
+    m_Target: {x: 16.788841, y: 4.653331, z: 26.691929}
     speed: 2
-    m_Value: {x: -2.3545785, y: -2.6592958, z: 21.137472}
+    m_Value: {x: 16.788841, y: 4.653331, z: 26.691929}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,9 +584,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.19086811, y: 0.7211199, z: -0.6290538, w: 0.2188416}
+    m_Target: {x: -0.18023102, y: 0.43742168, z: -0.08993808, w: -0.8764375}
     speed: 2
-    m_Value: {x: 0.19086383, y: 0.7211037, z: -0.62903965, w: 0.2188367}
+    m_Value: {x: -0.1802263, y: 0.4374102, z: -0.08993572, w: -0.8764145}
   m_Size:
     m_Target: 1.8413768
     speed: 2
@@ -709,21 +709,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/StairsPart
+    - Assets/Prefabs/RuPart
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/StairsPart
+  - Assets/Prefabs/RuPart
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\madagier\Documents\Cours\Repos\RoadToRU\Road To RU
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 14740000
-    m_LastClickedID: 29716
+    m_SelectedIDs: 0c740000
+    m_LastClickedID: 29708
     m_ExpandedIDs: 00000000f87200000674000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -777,9 +777,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: d49f0000
+    m_LastClickedInstanceID: 40916
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300008e0d0100808a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -855,8 +855,8 @@ MonoBehaviour:
     y: 0
     width: 773
     height: 1307
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}

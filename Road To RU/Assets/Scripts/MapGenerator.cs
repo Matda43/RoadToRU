@@ -86,7 +86,7 @@ public class MapGenerator
             }
             indexPlateform = index;
             Plateform plateform = parts[indexPart].plateforms[indexPlateform].GetComponent<Plateform>();
-            nbPlateformToCreate = Random.Range(plateform.minOccurence, plateform.maxOccurence + 1);
+            nbPlateformToCreate = Random.Range(plateform.minOccurence, plateform.maxOccurence);
         }
     }
 
