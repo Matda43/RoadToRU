@@ -22,11 +22,11 @@ public class Movable : MonoBehaviour
     {
         if (instanciate)
         {
-            if (direction.x > 0 && this.transform.position.x > scale.x/2 + GetComponent<Collider>().bounds.size.x/2)
+            if (direction.x > 0 && this.transform.position.x > scale.x + GetComponent<Collider>().bounds.size.x)
             {
                 shouldBeDestroyed = true;
             }
-            else if (direction.x < 0 && this.transform.position.x < scale.x/-2 - GetComponent<Collider>().bounds.size.x/2)
+            else if (direction.x < 0 && this.transform.position.x < -scale.x - GetComponent<Collider>().bounds.size.x)
             {
                 shouldBeDestroyed = true;
             }
@@ -45,7 +45,7 @@ public class Movable : MonoBehaviour
     {
         direction = new_direction;
         scale = new_scale;
-        Vector3 new_position = new Vector3(position.x + (scale.x/2 + GetComponent<Collider>().bounds.size.x/2) * -direction.x, position.y, position.z);
+        Vector3 new_position = new Vector3(position.x + (scale.x + GetComponent<Collider>().bounds.size.x) * -direction.x, position.y, position.z);
         this.transform.position = new_position;
         instanciate = true;
     }
