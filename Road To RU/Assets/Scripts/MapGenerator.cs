@@ -20,10 +20,14 @@ public class MapGenerator
 
     List<GameObject> plateforms;
 
-    public MapGenerator(int sizeMap, Part[] parts, GameObject player)
+    GameObject table;
+    bool tableadded = false;
+
+    public MapGenerator(int sizeMap, Part[] parts, GameObject player, GameObject table)
     {
         this.sizeMap = sizeMap;
         this.parts = parts;
+        this.table = table;
         this.currentPosition = getPosition(player) + new Vector3(0,0,8);
         this.start = this.currentPosition;
         calculateRealWidth();
@@ -107,7 +111,12 @@ public class MapGenerator
                 nbPlateformToCreate = 0;
                 end = indexPart == parts.Length;
 
-                Debug.Log("C'est la fin !");
+                if(indexPart + 1 == parts.Length && !tableadded)
+                {
+                    table.SetActive(true);
+                    table.transform.position = currentPosition;
+                    tableadded = true;
+                }
             }
 
             if (indexPart == 0 && indexPlateform == 0)

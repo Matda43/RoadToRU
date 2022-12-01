@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minOccurence: 2
   maxOccurence: 5
-  MAX_TIME_LEFT: 4
+  MAX_TIME_LEFT: 3
   direction: 2
   movableElements:
   - {fileID: 3882154317867673267, guid: 78ab982b816b04844bedb4905eea0fc6, type: 3}

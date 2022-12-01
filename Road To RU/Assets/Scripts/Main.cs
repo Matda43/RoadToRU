@@ -5,6 +5,7 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     public int sizeMap = 40;
+    public GameObject table;
 
     [SerializeField] public Part[] parts;
 
@@ -21,7 +22,7 @@ public class Main : MonoBehaviour
         player = goPlayer.GetComponent<Player>();
         camera = Camera.main;
 
-        mapGenerator = new MapGenerator(sizeMap, parts, goPlayer);
+        mapGenerator = new MapGenerator(sizeMap, parts, goPlayer, table);
     }
 
     // Update is called once per frame
