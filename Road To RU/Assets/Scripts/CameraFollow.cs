@@ -36,7 +36,7 @@ public class CameraFollow : MonoBehaviour
             if (newPosition.z < playerPosition.z + 3)
             {
                 newPosition.z = playerPosition.z;
-                offsetSpeed = 0.008f;
+                offsetSpeed = 0.005f;
             }
             else
             {
