@@ -72,7 +72,10 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Moveable"))
+        {
             PartiePerdu();
+            playerCrash();
+        }
         if (other.CompareTag("Static"))
         {
             if (transform.position.z < other.transform.position.z - 0.4f)
@@ -108,12 +111,16 @@ public class Player : MonoBehaviour
         return transform.GetChild(0).gameObject.activeSelf;
     }
 
-    void PartiePerdu()
+    public void PartiePerdu()
     {
-        isDead = true;
-        transform.localScale = new Vector3(1, 0.1f, 1);
-        //debugModeCamera = true;
         gameStart = false;
+        isDead = true;
+        //debugModeCamera = true;
+    }
+
+    void playerCrash()
+    {
+        transform.localScale = new Vector3(1, 0.1f, 1);
     }
 
     void PartieGagne()

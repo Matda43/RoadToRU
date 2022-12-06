@@ -36,7 +36,14 @@ public class Main : MonoBehaviour
 
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
         if (!GeometryUtility.TestPlanesAABB(planes, player.GetComponent<BoxCollider>().bounds))
-            Debug.Log("EH TA DISPARU !");
+            PlayBirdAnimation();
+    }
+
+    void PlayBirdAnimation()
+    {
+        player.GetComponent<Player>().PartiePerdu();
+        camera.GetComponent<CameraFollow>().centerPlayer();
+
     }
 
 }

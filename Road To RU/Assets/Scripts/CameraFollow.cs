@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     float offsetSpeed = 0;
     GameObject player;
     Vector3 offset = new Vector3(1, 14, -5);
+    Vector3 offsetPlayerCenter = new Vector3(1, 5, -5);
 
 
     // Start is called before the first frame update
@@ -54,4 +55,9 @@ public class CameraFollow : MonoBehaviour
         speed += 0.001f;
     }
 
+    public void centerPlayer()
+    {
+        Vector3 playerPosition = player.transform.position + offsetPlayerCenter;
+        this.transform.position = playerPosition;
+    }
 }
