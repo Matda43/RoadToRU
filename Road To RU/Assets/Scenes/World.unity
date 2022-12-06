@@ -397,7 +397,6 @@ GameObject:
   m_Component:
   - component: {fileID: 709731648}
   - component: {fileID: 709731647}
-  - component: {fileID: 709731646}
   - component: {fileID: 709731649}
   m_Layer: 0
   m_Name: Main Camera
@@ -406,14 +405,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &709731646
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709731645}
-  m_Enabled: 1
 --- !u!20 &709731647
 Camera:
   m_ObjectHideFlags: 0
@@ -1743,6 +1734,7 @@ GameObject:
   - component: {fileID: 2429989811925930042}
   - component: {fileID: 2429989811925930041}
   - component: {fileID: 2429989811925930044}
+  - component: {fileID: 2429989811925930045}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1793,7 +1785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   gameStart: 0
-  debugModeCamera: 0
+  debugModeCamera: 1
 --- !u!23 &2429989811925930044
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1836,6 +1828,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!81 &2429989811925930045
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429989811925930040}
+  m_Enabled: 1
 --- !u!1 &2429995258769370354
 GameObject:
   m_ObjectHideFlags: 0
