@@ -129,6 +129,6 @@ public class MapGenerator
 
     public bool anotherPlateformShouldBeAdded(Vector3 positionCamera)
     {
-        return (currentPosition.z - sizeMap < positionCamera.z - 5) && !end;
+        return (currentPosition.z - sizeMap < positionCamera.z - 10) && !end;
     }
 }

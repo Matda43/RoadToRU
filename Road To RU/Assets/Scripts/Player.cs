@@ -15,8 +15,7 @@ public class Player : MonoBehaviour
     bool blockLeft = false;
     bool blockRight = false;
 
-    bool isDead = false;
-
+    public bool isDead = false;
     public bool gameStart = false;
     public bool debugModeCamera = true;
     // Start is called before the first frame update
@@ -115,7 +114,6 @@ public class Player : MonoBehaviour
     {
         gameStart = false;
         isDead = true;
-        //debugModeCamera = true;
     }
 
     void playerCrash()

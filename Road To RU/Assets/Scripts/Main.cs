@@ -9,6 +9,8 @@ public class Main : MonoBehaviour
 
     [SerializeField] public Part[] parts;
 
+    public GameObject bird;
+
     GameObject goPlayer;
     Player player;
     new Camera camera;
@@ -35,15 +37,14 @@ public class Main : MonoBehaviour
             goPlayer.transform.GetChild(0).gameObject.SetActive(true);
 
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
-        if (!GeometryUtility.TestPlanesAABB(planes, player.GetComponent<BoxCollider>().bounds))
+        if (!GeometryUtility.TestPlanesAABB(planes, player.GetComponent<BoxCollider>().bounds) && !player.GetComponent<Player>().isDead)
             PlayBirdAnimation();
     }
 
     void PlayBirdAnimation()
     {
         player.GetComponent<Player>().PartiePerdu();
-        camera.GetComponent<CameraFollow>().centerPlayer();
-
+        Instantiate(bird, player.transform.position + new Vector3(-0.25f,10,20), new Quaternion(0, 180, 0, 1));
     }
 
 }

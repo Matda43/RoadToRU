@@ -9,8 +9,6 @@ public class CameraFollow : MonoBehaviour
     float offsetSpeed = 0;
     GameObject player;
     Vector3 offset = new Vector3(1, 14, -5);
-    Vector3 offsetPlayerCenter = new Vector3(1, 5, -5);
-
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +20,11 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player.GetComponent<Player>().debugModeCamera)
+        if (player.GetComponent<Player>().isDead)
+            centerPlayer();
+        else if (player.GetComponent<Player>().debugModeCamera)
         {
             Vector3 playerPosition = player.transform.position + offset;
-
             this.transform.position = playerPosition;
         }
         else if (player.GetComponent<Player>().gameStart)
@@ -57,7 +56,7 @@ public class CameraFollow : MonoBehaviour
 
     public void centerPlayer()
     {
-        Vector3 playerPosition = player.transform.position + offsetPlayerCenter;
-        this.transform.position = playerPosition;
+        Vector3 playerPosition = player.transform.position + offset;
+        transform.position = Vector3.MoveTowards(transform.position, playerPosition, 0.1f);
     }
 }
