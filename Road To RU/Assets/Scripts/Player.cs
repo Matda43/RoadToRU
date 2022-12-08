@@ -4,27 +4,50 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class Player
+/// </summary>
 public class Player : MonoBehaviour
 {
+    // Initial position of the Player
     Vector3 spawn = Vector3.zero - new Vector3(0,0,6);
+
+    // Player's direction
     Vector3 direction;
+
+    // Boolean to indicate if the player in in movement
     bool move = false;
 
+    // Boolean to indicate if there is an obstable forwrd the player
     bool blockForward = false;
+
+    // Boolean to indicate if there is an obstable in the back of the player
     bool blockBack = false;
+
+    // Boolean to indicate if there is an obstable at player's left
     bool blockLeft = false;
+
+    // Boolean to indicate if there is an obstable at player's right
     bool blockRight = false;
 
+    // Boolean to indicate if the Player is dead
     public bool isDead = false;
+
+    // Boolean to indicate if the game is started
     public bool gameStart = false;
+
+    // Boolean to indicate if the mode debug camera is active
     public bool debugModeCamera = true;
-    // Start is called before the first frame update
+
     void Avake()
     {
         direction = Vector3.zero;
         initialisation();
     }
 
+    /// <summary>
+    /// Initialise the position of the player with the spawn position
+    /// </summary>
     public void initialisation()
     {
         this.transform.position = spawn;
@@ -68,6 +91,7 @@ public class Player : MonoBehaviour
             gameStart = true;
     }
 
+    //Called if there is a collision with a collider of another object
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Moveable"))
@@ -90,6 +114,7 @@ public class Player : MonoBehaviour
             PartieGagne();
     }
 
+    // Check if the player go out of the collider of another object
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Static"))
@@ -105,22 +130,35 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Check if the plate is active or no
+    /// </summary>
+    /// <returns>State of the Player's plate</returns>
     public bool getPlateActive()
     {
         return transform.GetChild(0).gameObject.activeSelf;
     }
 
+    /// <summary>
+    /// Check is the game is lost
+    /// </summary>
     public void PartiePerdu()
     {
         gameStart = false;
         isDead = true;
     }
 
+    /// <summary>
+    /// Update the player's position
+    /// </summary>
     void playerCrash()
     {
         transform.localScale = new Vector3(1, 0.1f, 1);
     }
 
+    /// <summary>
+    /// Set the parameter gameStart to false
+    /// </summary>
     void PartieGagne()
     {
         

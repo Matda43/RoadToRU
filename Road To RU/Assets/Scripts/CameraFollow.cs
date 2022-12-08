@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Class CameraFollow
+/// </summary>
 public class CameraFollow : MonoBehaviour
 {
+    // Speed by default of the main camera
     float speed = 0.008f;
+
+    // Speed added to the default speed depending on player distance
     float offsetSpeed = 0;
+
+    // Player
     GameObject player;
+
+    // Initial position of the main camera
     Vector3 offset = new Vector3(1, 14, -5);
 
     // Start is called before the first frame update
@@ -18,6 +28,7 @@ public class CameraFollow : MonoBehaviour
         this.transform.Rotate(new Vector3(65, -10, 0));
     }
 
+    // Called each frame
     void FixedUpdate()
     {
         if (player.GetComponent<Player>().isDead)
@@ -49,11 +60,17 @@ public class CameraFollow : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Allows to increase the speed of the camera 
+    /// </summary>
     public void incSpeed()
     {
         speed += 0.001f;
     }
 
+    /// <summary>
+    /// Allows to center the camera on the player when he dies
+    /// </summary>
     public void centerPlayer()
     {
         Vector3 playerPosition = player.transform.position + offset;

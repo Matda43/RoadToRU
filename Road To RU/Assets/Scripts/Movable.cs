@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class Movable
+/// </summary>
 public class Movable : MonoBehaviour
 {
-
+    // Offset speed
     public float speed;
-    Vector3 direction;
-    Vector3 scale;
-    bool instanciate = false;
-    bool shouldBeDestroyed = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Offset direction
+    Vector3 direction;
+
+    // Scale of the gameObject
+    Vector3 scale;
+
+    // Boolean to indicate when execute really the script
+    bool instanciate = false;
+
+    // Boolean to indicate if the gameObject should be destroy
+    bool shouldBeDestroyed = false;
 
     // Update is called once per frame
     void Update()
@@ -33,6 +38,7 @@ public class Movable : MonoBehaviour
         }
     }
 
+    // Called each frame
     private void FixedUpdate()
     {
         if (instanciate && !shouldBeDestroyed)
@@ -41,6 +47,12 @@ public class Movable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set the offset direction, the scale of the gameObject and the initial position 
+    /// </summary>
+    /// <param name="new_direction">New offset direction</param>
+    /// <param name="position">Initial position</param>
+    /// <param name="new_scale">Scale</param>
     public void setDirection(Vector3 new_direction, Vector3 position, Vector3 new_scale)
     {
         direction = new_direction;
@@ -50,6 +62,10 @@ public class Movable : MonoBehaviour
         instanciate = true;
     }
 
+    /// <summary>
+    /// Check if the gameObject should be destroyed by his parent
+    /// </summary>
+    /// <returns>Bollean to indicate if the gameObject should be destroyed</returns>
     public bool shouldBeDestroyedByParent()
     {
         return shouldBeDestroyed;

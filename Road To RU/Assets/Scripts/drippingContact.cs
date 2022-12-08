@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class drippingContact : MonoBehaviour
+/// <summary>
+/// Class DrippingContact
+/// </summary>
+public class DrippingContact : MonoBehaviour
 {
-
+    // Player
     GameObject player;
 
     // Start is called before the first frame update
@@ -13,12 +16,7 @@ public class drippingContact : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+    // Called if there is a collision with the collider of the player
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")

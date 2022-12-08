@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class condorMovement : MonoBehaviour
+/// <summary>
+/// Class CondorMovement
+/// </summary>
+public class CondorMovement : MonoBehaviour
 {
+    // Speed of the condor
     float speed = 10;
+
+    // Player
     GameObject player;
 
     // Start is called before the first frame update

@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   gameStart: 0
-  debugModeCamera: 1
+  debugModeCamera: 0
 --- !u!23 &2429989811925930044
 MeshRenderer:
   m_ObjectHideFlags: 0

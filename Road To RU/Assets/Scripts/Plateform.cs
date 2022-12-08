@@ -4,23 +4,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+/// <summary>
+/// Class Plateform
+/// </summary>
 public class Plateform : MonoBehaviour
 {
+    // Minimum number of occurence of a plateform's type that you can found in the game 
     public int minOccurence;
+
+    // Maximum number of occurence of a plateform's type that you can found in the game 
     public int maxOccurence;
 
+    // Time to make the separation of the instanciation of the different gameObjects
     public float MAX_TIME_LEFT = 5;
+
+    // Elapsed time since last creation
     float timeLeft;
+
+    // Possible direction of the movable elements
     public enum Direction { Left, Right, Both, Top };
+
+    // Possible direction of the movable elements
     public Direction direction;
 
+    // Table composed of movable elements
     public GameObject[] movableElements;
+
+    // Table composed of static elements
     public GameObject[] staticElements;
+
+    // Minimum number of objects located on specific plateform 
     public int minObject;
+
+    // Maximum number of objects located on specific plateform 
     public int maxObjet;
 
+    // Possible position on a plateform to place an object
     List<int> plateformPosition = new List<int>();
 
+    // List of movable gameObjects
     List<GameObject> movables;
 
     void Awake()
@@ -47,6 +69,7 @@ public class Plateform : MonoBehaviour
         timeLeft = Random.Range(MAX_TIME_LEFT - 3, MAX_TIME_LEFT);
     }
 
+    // Update is called once per frame
     void Update()
     {
         updateTime(Time.deltaTime);
@@ -66,6 +89,10 @@ public class Plateform : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the elapsed time since last creation of an object
+    /// </summary>
+    /// <param name="timePassed">elapsed time since last frame</param>
     public void updateTime(float timePassed)
     {
         timeLeft -= timePassed;
@@ -76,6 +103,9 @@ public class Plateform : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Instanciates the static gameObjects and initializes their position
+    /// </summary>
     void initStaticObject()
     {
         int length = staticElements.Length;
@@ -93,6 +123,9 @@ public class Plateform : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Instanciates the movalbe gameObjects and initializes their position
+    /// </summary>
     void instanciate()
     {
         int length = movableElements.Length;
@@ -119,6 +152,9 @@ public class Plateform : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Determines all possible position to instanciate an object in a plateform
+    /// </summary>
     void FillList()
     {
         int sizePlatform = (int)transform.localScale.x;
@@ -128,6 +164,10 @@ public class Plateform : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Decrease the number of possible position determined before
+    /// </summary>
+    /// <returns>The position to delete in the plateform</returns>
     int GetNonRepeatRandom()
     {
         if (plateformPosition.Count == 0)
