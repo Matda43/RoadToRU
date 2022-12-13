@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using TMPro;
 
@@ -160,5 +159,6 @@ public class Player : MonoBehaviour
         textFin = "You came to the table !";
         CanRetry = true;
         gameStart = false;
+        isDead = true;
     }
 }
