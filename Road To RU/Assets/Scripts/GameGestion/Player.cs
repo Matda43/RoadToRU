@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
 
 /// <summary>
 /// Class Player
 /// </summary>
 public class Player : MonoBehaviour
 {
-    // Initial position of the Player
-    Vector3 spawn = Vector3.zero - new Vector3(0,0,6);
-
     // Player's direction
     Vector3 direction;
 
@@ -33,33 +30,30 @@ public class Player : MonoBehaviour
     // Boolean to indicate if the Player is dead
     public bool isDead = false;
 
+    // Boolean to indicate to the UI that the player is dead and all animation are ended
+    public bool CanRetry = false;
+
     // Boolean to indicate if the game is started
     public bool gameStart = false;
 
     // Boolean to indicate if the mode debug camera is active
     public bool debugModeCamera = true;
 
-    void Avake()
-    {
-        direction = Vector3.zero;
-        initialisation();
-    }
+    // Ui to the end of the game
+    public GameObject panelUI;
 
-    /// <summary>
-    /// Initialise the position of the player with the spawn position
-    /// </summary>
-    public void initialisation()
-    {
-        this.transform.position = spawn;
-    }
+    // Text display at the end of the game
+    public string textFin = "Textfin";
 
     // Update is called once per frame
     void Update()
     {
-        //Remove the 2 first if
-        if (Input.GetKeyDown(KeyCode.R))
+        if (CanRetry)
         {
-            SceneManager.LoadScene("World");
+            panelUI.transform.position = new Vector3(panelUI.transform.position.x, Screen.height + 100, panelUI.transform.position.z);
+            panelUI.SetActive(true);
+            CanRetry = false;
+            panelUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = textFin;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !blockForward && !isDead) {
             direction = Vector3.forward;
@@ -94,7 +88,7 @@ public class Player : MonoBehaviour
     //Called if there is a collision with a collider of another object
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Moveable"))
+        if (other.CompareTag("Moveable") && gameStart)
         {
             PartiePerdu();
             playerCrash();
@@ -149,11 +143,13 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Update the player's position
+    /// Lose of the player in case of a crash with something
     /// </summary>
     void playerCrash()
     {
         transform.localScale = new Vector3(1, 0.1f, 1);
+        CanRetry = true;
+        textFin = "You got knocked down !";
     }
 
     /// <summary>
@@ -161,10 +157,8 @@ public class Player : MonoBehaviour
     /// </summary>
     void PartieGagne()
     {
-        
+        textFin = "You came to the table !";
+        CanRetry = true;
         gameStart = false;
-        Debug.Log("U win !");
-        //Si appuie sur bouton mais en attendant : 
-        SceneManager.LoadScene("World");
     }
 }

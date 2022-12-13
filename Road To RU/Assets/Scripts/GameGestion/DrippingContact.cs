@@ -7,13 +7,11 @@ using UnityEngine;
 /// </summary>
 public class DrippingContact : MonoBehaviour
 {
-    // Player
-    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+
     }
 
     // Called if there is a collision with the collider of the player
@@ -24,6 +22,8 @@ public class DrippingContact : MonoBehaviour
             Destroy(transform.GetComponent<Rigidbody>());
             transform.localScale = new Vector3(2,0.5f,2);
             transform.position = other.transform.position + new Vector3(0,1,0);
+            other.GetComponent<Player>().CanRetry = true;
+            other.GetComponent<Player>().textFin = "You should take a shower...";
         }
     }
 }
