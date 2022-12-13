@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class UiGestion : MonoBehaviour
 {
     // Speed of the panel drop
-    float speed = 200;
+    float speed = 400;
 
     // Boolean to execute the bounce
     bool boing = false;
@@ -30,7 +30,7 @@ public class UiGestion : MonoBehaviour
         {
             rt.localPosition += Vector3.up * speed * Time.deltaTime;
             aRebondi = true;
-            speed = 150;
+            speed = 200;
         }
         else if (rt.localPosition.y > 0)
         {

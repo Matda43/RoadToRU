@@ -44,9 +44,21 @@ public class Player : MonoBehaviour
     // Text display at the end of the game
     public string textFin = "Textfin";
 
+    // Boolean and timer to block player from mooving while already mooving
+    bool moving = false;
+    float timer = 0;
+    float timeBetweenMoove = 0.1f;
+
     // Update is called once per frame
     void Update()
     {
+        if (moving)
+        {
+            if (timer <= timeBetweenMoove)
+                timer += Time.deltaTime;
+            else
+                moving = false;
+        }
         if (CanRetry)
         {
             panelUI.transform.position = new Vector3(panelUI.transform.position.x, Screen.height + 100, panelUI.transform.position.z);
@@ -54,21 +66,21 @@ public class Player : MonoBehaviour
             CanRetry = false;
             panelUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = textFin;
         }
-        if (Input.GetKeyDown(KeyCode.Z) && !blockForward && !isDead) {
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.UpArrow)) && !blockForward && !isDead && !moving) {
             direction = Vector3.forward;
             transform.rotation = Quaternion.Euler(0, 0, 0);
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.S) && transform.position.z > -2 && !blockBack && !isDead)
+        }else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && transform.position.z > -2 && !blockBack && !isDead && !moving)
         {
             direction = Vector3.back;
             transform.rotation = Quaternion.Euler(0, 180, 0);
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.Q) && transform.position.x > -10 && !blockLeft && !isDead)
+        }else if ((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.LeftArrow)) && transform.position.x > -10 && !blockLeft && !isDead && !moving)
         {
             direction = Vector3.left;
             transform.rotation = Quaternion.Euler(0, 270, 0);
             move = true;
-        }else if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 10 && !blockRight && !isDead)
+        }else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && transform.position.x < 10 && !blockRight && !isDead && !moving)
         {
             direction = Vector3.right;
             transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -76,6 +88,8 @@ public class Player : MonoBehaviour
         }
         if (move)
         {
+            moving = true;
+            timer = 0;
             this.transform.position += direction;
             move = false;
         }
